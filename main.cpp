@@ -1,6 +1,5 @@
 #include "stringlist.h"
 
-
 int main()
 {
     char **list = nullptr;
