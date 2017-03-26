@@ -15,6 +15,7 @@ int main()
 
     RemoveStringFromList(&list, "Hello 3");
 
+
     SortListOfStrings(&list);
 
     RemoveDuplicateStringsFromList(&list);

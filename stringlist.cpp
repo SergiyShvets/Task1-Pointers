@@ -41,6 +41,7 @@ void DestroyStringList(char ***list){
 
     if(*list == nullptr){
 
+        printf("list is empty\n");
         return;
     }
 
@@ -115,7 +116,9 @@ int FindStringInList(char *** const list, const char *str){
 
     for(size_t i = 0; i < size; i++){
 
-        if(strcmp((*list)[i], str) == 0){
+        const int exactly = 0;
+
+        if(strcmp((*list)[i], str) == exactly){
 
             printf("string found at position: %d\n", i);
             return i;
@@ -145,11 +148,11 @@ void RemoveStringFromListById(char*** const list, const size_t &removeElem)
     printf("string removed\n");
 
     const size_t capasity = *pGetStringListCapasity(*list);
+    const size_t halfCapasity = capasity / 2;
 
-    //cut capasity of list
-    if(size < capasity / 2){
+    if(size < halfCapasity){
 
-        const size_t newCapasity = capasity / 2;
+        const size_t newCapasity = halfCapasity;
         ResizeStringListCapasity(list, newCapasity);
     }
 }
